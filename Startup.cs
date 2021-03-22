@@ -1,3 +1,5 @@
+using AnimeService.Repositories;
+using AnimeService.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,8 +28,15 @@ namespace AnimeService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IAnimeRepository, AnimeRepository>();
+            services.AddHttpClient<IAnimeRepository, AnimeRepository>(client =>
+                client.BaseAddress = new Uri(Configuration["BaseUrl"])
+                ); 
 
-            services.AddControllers();
+            services.AddControllers(options => {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AnimeService", Version = "v1" });
