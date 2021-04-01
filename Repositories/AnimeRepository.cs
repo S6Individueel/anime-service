@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -28,12 +29,10 @@ namespace AnimeService.Repositories
         {
             string uri = _httpclient.BaseAddress + "/top/anime/1/airing";
             HttpResponseMessage response = await _httpclient.GetAsync(uri);
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseBody);
-            //var responseString = response.Content.ReadAsStringAsync().Result;
-            //JObject jObject = JObject.Parse(responseString); 
-
+            var stringContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(stringContent);
+            JObject jObject = JObject.Parse(stringContent);
+            Console.WriteLine(jObject);
             throw new NotImplementedException();
         }
         //return topAnime;
