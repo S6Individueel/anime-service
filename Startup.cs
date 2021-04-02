@@ -36,7 +36,11 @@ namespace AnimeService
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;
             });
-
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                builder.WithOrigins("https://localhost:5001"));
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AnimeService", Version = "v1" });
@@ -56,6 +60,7 @@ namespace AnimeService
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseAuthorization();
 
