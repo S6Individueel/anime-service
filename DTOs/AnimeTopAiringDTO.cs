@@ -11,7 +11,7 @@ namespace AnimeService.DTOs
         public string Name { get; set; }
         public int Rank { get; set; }
         public string ImageUrl { get; set; }
-        public int MaxEpisodes { get; set; }
+        public string MaxEpisodes { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public double Score { get; set; }

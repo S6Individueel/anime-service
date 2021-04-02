@@ -20,7 +20,7 @@ namespace AnimeService
                 Score = anime.score,
                 StartDate = anime.start_date,
                 EndDate = anime.end_date,
-                MaxEpisodes = anime.episodes.GetValueOrDefault(0)
+                MaxEpisodes = anime.episodes.Equals(null) ?  "Unknown" : anime.episodes.Value.ToString()
             };
         }
     }
