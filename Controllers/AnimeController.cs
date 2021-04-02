@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace AnimeService.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
+    [ApiController]
     public class AnimeController : Controller
     {
         private readonly IAnimeRepository _animeRepository;
@@ -19,8 +19,8 @@ namespace AnimeService.Controllers
         {
             _animeRepository = animeRepository;
         }
-
-        [HttpGet("/popular")]
+        
+        [HttpGet("popular")]
         public async Task<IEnumerable<AnimeTopAiringDTO>> GetTopTenAsync()
         {
             var animes = (await _animeRepository.GetTopTenAsync())

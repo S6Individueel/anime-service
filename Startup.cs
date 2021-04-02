@@ -31,8 +31,8 @@ namespace AnimeService
             services.AddSingleton<IAnimeRepository, AnimeRepository>();
             services.AddHttpClient<IAnimeRepository, AnimeRepository>(client =>
                 client.BaseAddress = new Uri(Configuration["BaseUrl"])
-                ); 
-
+                );
+            services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;
             });
@@ -63,6 +63,7 @@ namespace AnimeService
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
