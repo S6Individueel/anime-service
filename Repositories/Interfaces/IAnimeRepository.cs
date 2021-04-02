@@ -9,7 +9,7 @@ namespace AnimeService.Repositories.Interfaces
 {
     public interface IAnimeRepository
     {
-        Task<IEnumerable<Anime>> GetTopTenAsync();
+        Task<IEnumerable<TopAnime>> GetTopTenAsync();
         Task<IEnumerable<Anime>> GetAnimeListAsync();
     }
 }

@@ -25,17 +25,23 @@ namespace AnimeService.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Anime>> GetTopTenAsync()
+        public async Task<IEnumerable<TopAnime>> GetTopTenAsync()
         {
-            string uri = _httpclient.BaseAddress + "/top/anime/1/airing";
+            string uri = _httpclient.BaseAddress + "/top/anime/0/airing";
             HttpResponseMessage response = await _httpclient.GetAsync(uri);
-            var stringContent = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(stringContent);
-            JObject jObject = JObject.Parse(stringContent);
-            Console.WriteLine(jObject);
-            throw new NotImplementedException();
+            var content = await response.Content.ReadAsStringAsync();
+
+            IList<JToken> results = JObject.Parse(content)["top"].Children().ToList(); //Parses content, gets the "top" list and converts to list.
+
+            IList<TopAnime> topAnimes = new List<TopAnime>();
+            foreach (JToken anime in results)
+            {
+                TopAnime topAnime = anime.ToObject<TopAnime>();
+                topAnimes.Add(topAnime);
+            }
+
+            return topAnimes;
         }
-        //return topAnime;
     
     }
 }

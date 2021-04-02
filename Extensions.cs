@@ -9,7 +9,7 @@ namespace AnimeService
 {
     public static class Extensions
     {
-        public static AnimeTopAiringDTO AsTopDTO(this Anime anime)
+        public static AnimeTopAiringDTO AsTopDTO(this TopAnime anime)
         {
             return new AnimeTopAiringDTO
             {
@@ -20,7 +20,7 @@ namespace AnimeService
                 Score = anime.score,
                 StartDate = anime.start_date,
                 EndDate = anime.end_date,
-                MaxEpisodes = anime.episodes
+                MaxEpisodes = anime.episodes.GetValueOrDefault(0)
             };
         }
     }
