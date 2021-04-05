@@ -21,10 +21,10 @@ namespace AnimeService.Controllers
         }
         
         [HttpGet("popular")]
-        public async Task<IEnumerable<AnimeTopAiringDTO>> GetTopTenAsync()
+        public async Task<IEnumerable<ShowDTO>> GetTopTenAsync()
         {
             var animes = (await _animeRepository.GetTopTenAsync())
-                            .Select(anime => anime.AsTopDTO());
+                            .Select(anime => anime.AsShowDTO());
             return animes;
         }
     }

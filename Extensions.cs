@@ -23,5 +23,17 @@ namespace AnimeService
                 MaxEpisodes = anime.episodes.Equals(null) ?  "Unknown" : anime.episodes.Value.ToString()
             };
         }
+        public static ShowDTO AsShowDTO(this TopAnime show)
+        {
+            return new ShowDTO
+            {
+                Id = show.mal_id,
+                Title = show.title,
+                Media_type = show.type,
+                Description = "To be implemented",
+                Release_date = show.start_date,
+                Image_url = show.image_url
+            };
+        }
     }
 }
