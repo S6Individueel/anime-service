@@ -1,13 +1,16 @@
 ﻿using AnimeService.Data.Models;
 using AnimeService.DTOs;
+using AnimeService.Rabbit;
 using AnimeService.Repositories.Interfaces;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AnimeService.Repositories
@@ -39,9 +42,8 @@ namespace AnimeService.Repositories
                 TopAnime topAnime = anime.ToObject<TopAnime>();
                 topAnimes.Add(topAnime);
             }
-
+            //TODO: Return success or fail message of type string
             return topAnimes;
         }
-    
     }
 }

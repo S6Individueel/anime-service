@@ -1,3 +1,5 @@
+using AnimeService.Rabbit;
+using AnimeService.Rabbit.Interfaces;
 using AnimeService.Repositories;
 using AnimeService.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +34,12 @@ namespace AnimeService
             services.AddHttpClient<IAnimeRepository, AnimeRepository>(client =>
                 client.BaseAddress = new Uri(Configuration["BaseUrl"])
                 );
+            services.AddHostedService<ConsumeScopedServiceHostedService>();
+            services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
+            //services.AddHostedService<SendMessageHandler>();
+            services.AddHttpClient<ScopedProcessingService>(client =>
+                client.BaseAddress = new Uri(Configuration["BaseUrl"])
+            );
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;
