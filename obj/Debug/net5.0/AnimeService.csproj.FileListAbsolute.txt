@@ -20,7 +20,6 @@ C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\System.Text.Json.dll
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\staticwebassets\AnimeService.StaticWebAssets.Manifest.cache
-C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\staticwebassets\AnimeService.StaticWebAssets.xml
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\scopedcss\bundle\AnimeService.styles.css
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.RazorTargetAssemblyInfo.cache
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.csproj.CopyComplete
@@ -28,5 +27,5 @@ C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\ref\AnimeService.dll
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.pdb
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.genruntimeconfig.cache
-C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.csprojAssemblyReference.cache
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.csproj.AssemblyReference.cache

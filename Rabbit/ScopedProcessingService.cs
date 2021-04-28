@@ -17,7 +17,7 @@ namespace AnimeService.Rabbit
     internal class ScopedProcessingService : IScopedProcessingService
     {
         private int executionCount = 0;
-        private readonly double minutesTillUpdate = 720.0; 
+        private readonly double hoursTillUpdate = 12; 
         private readonly ILogger _logger;
 
 /*        private readonly ConnectionFactory connectionFactory;
@@ -46,7 +46,7 @@ namespace AnimeService.Rabbit
                 using (var connection = factory.CreateConnection())
                 using (var channel = connection.CreateModel())
                 {
-                    channel.ExchangeDeclare(exchange: "topic_logs",                     //EXCHANGE creation
+                    channel.ExchangeDeclare(exchange: "topic_exchange",                     //EXCHANGE creation
                                             type: "topic");
 
                     string uri = "https://api.jikan.moe/v3" + "/top/anime/0/airing";
@@ -61,17 +61,18 @@ namespace AnimeService.Rabbit
                         TopAnime topAnime = anime.ToObject<TopAnime>();
                         topAnimes.Add(topAnime);
                     }
+                    var showList = topAnimes.Select(anime => anime.AsShowDTO());
 
-                    var json = JsonConvert.SerializeObject(topAnimes);                    //MESSAGE creation
+                    var json = JsonConvert.SerializeObject(showList);                    //MESSAGE creation
                     var body = Encoding.UTF8.GetBytes(json);
 
-                    channel.BasicPublish(exchange: "topic_logs",                        //MESSAGE publishing
-                                         routingKey: "shows.trending",
+                    channel.BasicPublish(exchange: "topic_exchange",                        //MESSAGE publishing
+                                         routingKey: "shows.anime.trending",
                                          basicProperties: null,
                                          body: body);
                     Console.WriteLine(" [x] Sent Update message", body);
                 }
-                await Task.Delay(TimeSpan.FromMinutes(minutesTillUpdate), stoppingToken);
+                await Task.Delay(TimeSpan.FromHours(hoursTillUpdate), stoppingToken);
             }
         }
     }
