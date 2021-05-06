@@ -37,12 +37,17 @@ namespace AnimeService.Repositories
             IList<JToken> results = JObject.Parse(content)["top"].Children().ToList(); //Parses content, gets the "top" list and converts to list.
 
             IList<TopAnime> topAnimes = new List<TopAnime>();
-            foreach (JToken anime in results)
+
+            for (int animeCount = 0; animeCount < 10; animeCount++)
+            {
+                TopAnime topAnime = results[animeCount].ToObject<TopAnime>();
+                topAnimes.Add(topAnime);
+            }
+/*            foreach (JToken anime in results)
             {
                 TopAnime topAnime = anime.ToObject<TopAnime>();
                 topAnimes.Add(topAnime);
-            }
-            //TODO: Return success or fail message of type string
+            }*/
             return topAnimes;
         }
     }

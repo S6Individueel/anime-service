@@ -36,7 +36,7 @@ namespace AnimeService
                 );
             services.AddHostedService<ConsumeScopedServiceHostedService>();
             services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
-            //services.AddHostedService<SendMessageHandler>();
+            
             services.AddHttpClient<ScopedProcessingService>(client =>
                 client.BaseAddress = new Uri(Configuration["BaseUrl"])
             );

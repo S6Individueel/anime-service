@@ -1,5 +1,6 @@
 ﻿using AnimeService.Data.Models;
 using AnimeService.Rabbit.Interfaces;
+using AnimeService.Repositories.Interfaces;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -23,13 +24,14 @@ namespace AnimeService.Rabbit
 /*        private readonly ConnectionFactory connectionFactory;
         private readonly IConnection _connection;*/
         private readonly HttpClient _httpclient;
+        private IAnimeRepository _animeRepository;
 
-        public ScopedProcessingService(ILogger<ScopedProcessingService> logger, HttpClient httpClient)
+        public ScopedProcessingService(ILogger<ScopedProcessingService> logger, HttpClient httpClient, IAnimeRepository animeRepository)
         {
 /*            connectionFactory = new ConnectionFactory() { HostName = "localhost" };
             _connection = connectionFactory.CreateConnection();*/
             _httpclient = httpClient;
-
+            _animeRepository = animeRepository;
             _logger = logger;
         }
 
@@ -49,19 +51,8 @@ namespace AnimeService.Rabbit
                     channel.ExchangeDeclare(exchange: "topic_exchange",                     //EXCHANGE creation
                                             type: "topic");
 
-                    string uri = "https://api.jikan.moe/v3" + "/top/anime/0/airing";
-                    HttpResponseMessage response = await _httpclient.GetAsync(uri);
-                    var content = await response.Content.ReadAsStringAsync();
-
-                    IList<JToken> results = JObject.Parse(content)["top"].Children().ToList(); //Parses content, gets the "top" list and converts to list.
-
-                    IList<TopAnime> topAnimes = new List<TopAnime>();
-                    foreach (JToken anime in results)
-                    {
-                        TopAnime topAnime = anime.ToObject<TopAnime>();
-                        topAnimes.Add(topAnime);
-                    }
-                    var showList = topAnimes.Select(anime => anime.AsShowDTO());
+                    var showList = (await _animeRepository.GetTopTenAsync())            //Parses content, gets the "top" list and converts to list.
+                            .Select(anime => anime.AsShowDTO());
 
                     var json = JsonConvert.SerializeObject(showList);                    //MESSAGE creation
                     var body = Encoding.UTF8.GetBytes(json);
