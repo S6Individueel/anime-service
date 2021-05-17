@@ -21,7 +21,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
+    - name: Setup .NET Core
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0' # SDK Version to use; x will use the latest version of the 3.1 channel
+    - name: Build with dotnet
     - run: dotnet build --configuration Release  
+    
+    - name: Run tests
+    - run: dotnet test --configuration Release  
