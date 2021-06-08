@@ -1,3 +1,7 @@
+using AnimeService.Rabbit;
+using AnimeService.Rabbit.Interfaces;
+using AnimeService.Repositories;
+using AnimeService.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,8 +30,25 @@ namespace AnimeService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
+            services.AddSingleton<IAnimeRepository, AnimeRepository>();
+            services.AddHttpClient<IAnimeRepository, AnimeRepository>(client =>
+                client.BaseAddress = new Uri(Configuration["BaseUrl"])
+                );
+            services.AddHostedService<ConsumeScopedServiceHostedService>();
+            services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
+            
+            services.AddHttpClient<ScopedProcessingService>(client =>
+                client.BaseAddress = new Uri(Configuration["BaseUrl"])
+            );
+            services.AddRouting(options => options.LowercaseUrls = true);
+            services.AddControllers(options => {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                builder.WithOrigins("https://localhost:5001"));
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AnimeService", Version = "v1" });
@@ -47,6 +68,7 @@ namespace AnimeService
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseAuthorization();
 
@@ -54,6 +76,7 @@ namespace AnimeService
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
