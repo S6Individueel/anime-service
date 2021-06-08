@@ -37,6 +37,8 @@ namespace AnimeService.Rabbit
 
         public async Task DoWork(CancellationToken stoppingToken)
         {
+            Console.WriteLine("Sleeping for Rabbit and ShowService...");
+            await Task.Delay(TimeSpan.FromSeconds(30));
             while (!stoppingToken.IsCancellationRequested)
             {
                 executionCount++;

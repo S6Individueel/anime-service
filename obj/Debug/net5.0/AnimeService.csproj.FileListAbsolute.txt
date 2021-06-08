@@ -28,5 +28,4 @@ C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.pdb
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.genruntimeconfig.cache
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\RabbitMQ.Client.dll
-C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.csprojAssemblyReference.cache
-C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\staticwebassets\AnimeService.StaticWebAssets.xml
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.csproj.AssemblyReference.cache
