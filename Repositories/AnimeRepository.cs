@@ -43,11 +43,6 @@ namespace AnimeService.Repositories
                 TopAnime topAnime = results[animeCount].ToObject<TopAnime>();
                 topAnimes.Add(topAnime);
             }
-/*            foreach (JToken anime in results)
-            {
-                TopAnime topAnime = anime.ToObject<TopAnime>();
-                topAnimes.Add(topAnime);
-            }*/
             return topAnimes;
         }
     }
