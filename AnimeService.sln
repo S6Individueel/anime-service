@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeService", "AnimeServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeService.Tests", "..\AnimeService.Tests\AnimeService.Tests.csproj", "{4B5941FD-A8EE-47AA-868B-2B6E338C53C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeServiceTests", "..\AnimeServiceTests\AnimeServiceTests.csproj", "{27486046-9264-40D5-BC24-95440879AD52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4B5941FD-A8EE-47AA-868B-2B6E338C53C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B5941FD-A8EE-47AA-868B-2B6E338C53C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B5941FD-A8EE-47AA-868B-2B6E338C53C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27486046-9264-40D5-BC24-95440879AD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27486046-9264-40D5-BC24-95440879AD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27486046-9264-40D5-BC24-95440879AD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27486046-9264-40D5-BC24-95440879AD52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
