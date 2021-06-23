@@ -30,3 +30,9 @@ C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\RabbitMQ.Client.dll
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\AnimeService.csprojAssemblyReference.cache
 C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\obj\Debug\net5.0\staticwebassets\AnimeService.StaticWebAssets.xml
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\FakeItEasy.dll
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\xunit.abstractions.dll
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\xunit.assert.dll
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\xunit.core.dll
+C:\Users\ander\Documents\SCHOOL\SEMESTER 6\INDIVIDUEEL\PROJECTS\AnimeService\bin\Debug\net5.0\xunit.execution.dotnet.dll
