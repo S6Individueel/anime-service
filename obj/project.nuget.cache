@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ipO+fq2nQXZJ33OhptsXN9hX1OYYD4MhrBV+3vdSxyMmsqNNM5LKJth7mEiOfU9mU1ZDzAbCjIuOLY+4VxYgpA==",
+  "dgSpecHash": "PwnUpgLKryhjDdbBL5oCVEjalf1OhvoJjGiM764S35jz3TS8Xd/ylwhivLeiaowdo0XEYh6ztWUX3b+NzTFDxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ander\\Documents\\SCHOOL\\SEMESTER 6\\INDIVIDUEEL\\PROJECTS\\AnimeService\\AnimeService.csproj",
   "expectedPackageFiles": [
@@ -105,7 +105,8 @@
     "C:\\Users\\ander\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
     "C:\\Users\\ander\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\ander\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
-    "C:\\Users\\ander\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512"
+    "C:\\Users\\ander\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
+    "C:\\Users\\ander\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.4\\microsoft.netcore.app.host.win-x64.5.0.4.nupkg.sha512"
   ],
   "logs": []
 }
