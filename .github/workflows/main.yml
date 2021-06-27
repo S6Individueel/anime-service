@@ -27,10 +27,13 @@ jobs:
         dotnet-version: '5.0.x' # SDK Version to use; x will use the latest version of the 3.1 channel
     - name: Restore with Dotnet
       run:  dotnet restore
+
     - name: Build with dotnet
       run: dotnet build AnimeService  
+
     - name: Run tests
-      run: dotnet test AnimeService.Tests  
+      run: dotnet test AnimeServiceTests --collect:"XPlat Code Coverage"
+
     - name: Set up JDK 11
       uses: actions/setup-java@v1
       with:
@@ -38,12 +41,14 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
     - name: Cache SonarCloud packages
       uses: actions/cache@v1
       with:
         path: ~\sonar\cache
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
+
     - name: Cache SonarCloud scanner
       id: cache-sonar-scanner
       uses: actions/cache@v1
@@ -51,12 +56,14 @@ jobs:
         path: .\.sonar\scanner
         key: ${{ runner.os }}-sonar-scanner
         restore-keys: ${{ runner.os }}-sonar-scanner
+
     - name: Install SonarCloud scanner
       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
       shell: pwsh
       run: |
         New-Item -Path .\.sonar\scanner -ItemType Directory
         dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+
     - name: Build and analyze
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -66,3 +73,10 @@ jobs:
         .\.sonar\scanner\dotnet-sonarscanner begin /k:"S6Individueel_anime-service" /o:"s6individueel" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
         dotnet build AnimeService 
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+#    - name: ReportGenerator
+#      uses: danielpalme/ReportGenerator-GitHub-Action@4.8.10
+#      with:
+#        reports: '*\AnimeServiceTests\TestResults\*\coverage.cobertura.xml' # REQUIRED # The coverage reports that should be parsed (separated by semicolon). Globbing is supported.
+#        targetdir: 'coveragereport' # REQUIRED # The directory where the generated report should be saved.
+#        reporttypes: 'HtmlInline;html' # The output formats and scope (separated by semicolon) Values: Badges, Clover, Cobertura, CsvSummary, Html, HtmlChart, HtmlInline, HtmlInline_AzurePipelines, HtmlInline_AzurePipelines_Dark, HtmlSummary, JsonSummary, Latex, LatexSummary, lcov, MarkdownSummary, MHtml, PngChart, SonarQube, TeamCitySummary, TextSummary, Xml, XmlSummary
