@@ -90,12 +90,12 @@ jobs:
         username: ${{ secrets.AzureAppService_ContainerUsername_8be4f9b576e8449e8009d6bcbae12d36 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_f4c7d6c1ce0d460db400760706f0d1e3 }}
 
-    - name: Build and push container image to registry
-      uses: docker/build-push-action@v2
-      with:
-        push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_8be4f9b576e8449e8009d6bcbae12d36 }}/matchflix/animeservice:${{ github.sha }}
-        file: ./Dockerfile
+#    - name: Build and push container image to registry
+#      uses: docker/build-push-action@v2
+#      with:
+#        push: true
+#        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_8be4f9b576e8449e8009d6bcbae12d36 }}/matchflix/animeservice:${{ github.sha }}
+#        file: ./Dockerfile
 
   deploy-to-azure:
     runs-on: ubuntu-latest
