@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeService", "AnimeService\AnimeService.csproj", "{4FDE5290-9149-4424-8696-1F7779E916AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeService.Tests", "AnimeService.Tests\AnimeService.Tests.csproj", "{774CD350-41CF-41C2-B4E7-10CCCF8A71C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeServiceTests", "AnimeServiceTests\AnimeServiceTests.csproj", "{583536ED-AC01-43BB-8A01-938279AFEE7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4FDE5290-9149-4424-8696-1F7779E916AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FDE5290-9149-4424-8696-1F7779E916AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FDE5290-9149-4424-8696-1F7779E916AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{774CD350-41CF-41C2-B4E7-10CCCF8A71C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{774CD350-41CF-41C2-B4E7-10CCCF8A71C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{774CD350-41CF-41C2-B4E7-10CCCF8A71C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{774CD350-41CF-41C2-B4E7-10CCCF8A71C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583536ED-AC01-43BB-8A01-938279AFEE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583536ED-AC01-43BB-8A01-938279AFEE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583536ED-AC01-43BB-8A01-938279AFEE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583536ED-AC01-43BB-8A01-938279AFEE7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

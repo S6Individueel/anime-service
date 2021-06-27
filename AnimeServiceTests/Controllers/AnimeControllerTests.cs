@@ -1,18 +1,21 @@
-using FakeItEasy;
-using System;
-using System.Threading.Tasks;
-using Xunit;
-using AnimeService.Data.Models;
-using System.Linq;
-using AnimeService.Repositories.Interfaces;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnimeService.Controllers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FakeItEasy;
+using AnimeService.Repositories.Interfaces;
+using AnimeService.Data.Models;
 
-namespace AnimeService.Tests
+namespace AnimeService.Controllers.Tests
 {
+    [TestClass()]
     public class AnimeControllerTests
     {
-        [Fact]
-        public async Task Get_Top_Ten_Movies()
+        [TestMethod()]
+        public async Task GetTopTenAsyncTest()
         {
             //Arange
             int animeCount = 10;
@@ -25,7 +28,7 @@ namespace AnimeService.Tests
             var result = await controller.GetTopTenAsync(); //Makes the call
             //Assert
 
-            Assert.Equal(animeCount, result.Count()); //Checks if the list is filled
+            Assert.AreEqual(animeCount, result.Count()); //Checks if the list is filled
         }
     }
 }
