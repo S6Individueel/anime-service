@@ -1,0 +1,10 @@
+﻿version: '3.4'
+services:
+
+    animeservice:
+        container_name: "animeservice"
+        hostname: "animeservice"
+        image: matchflix/animeservice:latest
+        restart: on-failure
+        ports: 
+            - "5031:80"
