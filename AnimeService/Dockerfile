@@ -6,7 +6,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["AnimeService.csproj", "AnimeService/"]
+COPY ["AnimeService.csproj", ""]
 RUN dotnet restore "AnimeService.csproj"
 COPY . .
 WORKDIR "/src/."
